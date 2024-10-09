@@ -15,7 +15,7 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 //object 1
-const c1 = {
+const circle = {
     radius: 0,
     prototype: 3.14,
     get diameter(){
@@ -29,23 +29,23 @@ const c1 = {
     }
 }
 //set NaN nếu r<0
-Object.defineProperty(c1, "setNaN", {
+Object.defineProperty(circle, "setNaN", {
     get : function(){
         this.radius = NaN
         this.diameter = NaN
     }
 })
-//input
+//input cho circle
 rl.question('nhập r ', (ans) => {
     if (ans<0){
-        c1.setNaN
+        circle.setNaN
     }
     else{
-        c1.radius = ans
+        circle.radius = ans
     }
 //output
-console.log(`r = ${c1.radius}, d = ${c1.diameter}`)
-console.log(`s = ${c1.dt} c = ${c1.cv}`)
+console.log(`r = ${circle.radius}, d = ${circle.diameter}`)
+console.log(`s = ${circle.dt} c = ${circle.cv}`)
 //exit process
 rl.close()
 }
