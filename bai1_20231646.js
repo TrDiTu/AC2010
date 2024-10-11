@@ -8,49 +8,46 @@ Viết hàm khởi tạo đối tượng hình tròn có:
 - có PI cho Circle.prototype
 */
 //Bắt đầu
-//Tạo IO interface trên console
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-//object 1
-const circle = {
-    radius: 0,
-    prototype: 3.14,
-    get diameter(){
-        return this.radius*2
+//object Circle
+function Circle(radius) {
+    if (radius < 0){
+        this.r = NaN
+        }    else this.r = radius
+    
+}
+    Circle.prototype = { 
+    get r(){
+        return this._r
+    },
+    set r(r){
+        this._r = r 
+        if (this._r < 0) {
+            this._r = NaN
+        }
+    },
+    get duongkinh(){
+        return this.r*2
     },
     get dt(){
-        return this.prototype*this.radius**2
+        return Math.PI*this.r**2
     },
     get cv(){
-        return this.diameter*this.prototype
+        return this.duongkinh*Math.PI
     }
 }
-//set NaN nếu r<0
-Object.defineProperty(circle, "setNaN", {
-    get : function(){
-        this.radius = NaN
-        this.diameter = NaN
-    }
-})
-//input cho circle
-rl.question('nhập r ', (ans) => {
-    if (ans<0){
-        circle.setNaN
-    }
-    else{
-        circle.radius = ans
-    }
-//output
-console.log(`r = ${circle.radius}, d = ${circle.diameter}`)
-console.log(`s = ${circle.dt} c = ${circle.cv}`)
-//exit process
-rl.close()
-}
-)
-rl.on('close',() => {
-    process.exit(0)
-}
-)
+Circle.prototype.PI = Math.PI
+//Tạo 2 object c1 và c2
+var c1 = new Circle(6)
+var c2 = new Circle(-2)
+//Trả kết quả của c1 
+console.log("c1:")
+console.log(c1.r)
+console.log(c1.duongkinh)
+console.log(c1.dt)
+console.log(c1.cv)
+//Trả kết quả của c2
+console.log("c2:")
+console.log(c2.r)
+console.log(c2.duongkinh)
+console.log(c2.dt)
+console.log(c2.cv)
