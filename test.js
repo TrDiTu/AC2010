@@ -1,8 +1,11 @@
-let arr = [15, 2, 45, 4, 7, 8, 9, 10, 6, 5, 8, 12]
-let ans = []
-for (let i = 0; i < arr.length; i++){
-    if (arr[i] == i+1){
-        ans.push(arr[i])        
-    }
-}
-console.log(ans.join(', ')) // print answer
+const scores = [
+    { name: 'Asabeneh', score: 95 },
+     { name: 'Lidiya', score: 98 },
+    { name: 'Mathias', score: 80 },
+    { name: 'Elias', score: 50 },
+    { name: 'Martha', score: 85 },
+    { name: 'John', score: 100 },
+  ]
+  
+  const scoresGreaterEighty = scores.filter((score) => score.score > 80)
+  console.log(scoresGreaterEighty)
