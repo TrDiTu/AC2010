@@ -9,4 +9,4 @@ function lastIndexofOne(s) {
     }
     return -1
 }
-console.log(lastIndexofOne(s)) //8
+console.log(lastIndexofOne(s))

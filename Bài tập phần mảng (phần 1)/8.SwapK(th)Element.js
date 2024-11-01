@@ -6,4 +6,4 @@ function swapElement(k,arr){
     arr[arr.length-k] = temp
     return arr
 }
-console.log(swapElement(k,arr)) //[1, 2, 9, 4, 5, 6, 7, 8, 3, 10]
+console.log(swapElement(k,arr)) 

@@ -11,4 +11,4 @@ function countOddEven(arr) {
     });
     return [odd, even].join(' ')
 }
-console.log(countOddEven(arr)) //[3, 2]
+console.log(countOddEven(arr))
